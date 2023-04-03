@@ -1,12 +1,38 @@
 
-var header = document.querySelector('#main-header');
-header.style.borderBottom = 'solid 4px #ccc';
+var itemList = document.querySelector('#items');
+//parent node
+console.log(itemList.parentNode);
+itemList.parentNode.style.backgroundColor = '#f4f4f4';
+console.log(itemList.parentNode.parentNode);
 
+// parent element
+console.log(itemList.parentElement);
+itemList.parentElement.style.backgroundColor = '#f4f4f4';
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
-var even = document.querySelectorAll('li:nth-child(even)');
-even[1].style.Color = '#3a8000';
+//chilNodes
+console.log(itemList.children);
+itemList.children[1].style.backgroundColor = '#f4f4f4';
 
-for(var i = 0; i<odd.length; i++){
-    odd[i].style.backgroundColor = '#3a8000';
-}
+//firstChild
+console.log(itemList.firstChild);
+//firstelementchild
+console.log(itemList.firstElementChild);
+
+// nextsibling
+console.log(itemList.nextSibling);
+//
+console.log(itemList.previousSibling);
+//create div
+var newDiv = document.createElement('div');
+newDiv.className = 'hello';
+newDiv.id = 'hello1';
+newDiv.setAttribute('title', 'Hello div');
+var newDivText = document.createTextNode('HEllo World');
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+console.log(newDiv);
+
+container.insertBefore(newDiv,h1);
+
